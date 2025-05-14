@@ -52,4 +52,9 @@ def eliminar_usuario(correo):
     del usuarios[correo]
     return jsonify({"mensaje": f"Usuario {correo} eliminado correctamente."}), 200
 
+# ✅ Ruta raíz para evitar error 500
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({"mensaje": "API Flask en Vercel funcionando."}), 200
+
 handler = Mangum(app)
