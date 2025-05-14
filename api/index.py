@@ -57,4 +57,7 @@ def eliminar_usuario(correo):
 def home():
     return jsonify({"mensaje": "API Flask en Vercel funcionando."}), 200
 
+if __name__ == "__main__":
+    app.run(debug=True)
+
 handler = Mangum(app)
